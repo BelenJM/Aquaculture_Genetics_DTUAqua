@@ -52,13 +52,14 @@ library(dartR)
 ```
 
 ### Get familiar with objects in R (skip this part if you are past beginner into R)
-Objects in programming can be many things. We are going to work with a small example, using matrices. A matrix in R can be created using the R base function matrix(). The number of rows and columns (dimension) of the matrix can be set up by playing with the function arguments nrow and ncol. For example,
+Objects in programming can be many things. You can use whatever name you want to store the data (with certain rules, e.g. no spaces in between words). We are going to work with a small example, using matrices. A matrix in R can be created using the R base function matrix(). The number of rows and columns (dimension) of the matrix can be set up by playing with the function arguments nrow and ncol. For example,
 ```
 hello_world <- matrix(1:12, nrow = 4, ncol = 3)
 # same result is obtained by providing only one dimension
 hello_world2 <- matrix(1:12, nrow = 4)
 ```
-Take your time to explore how to access the columns and the rows of each object. What happens if you set up a third object "hello_world3" but changing the argument nrow by ncol?
+Take your time to explore how to access the columns and the rows of each object. 
+QUESTION: What happens if you set up a third object "hello_world3" but changing the argument nrow by ncol?
 
 ### Set up your working directory in R
 It is important to set up the working directory from where you will be working on. This location can be wherever, but it is important to set it up at the beginning. For example, I will be working from this folder:
@@ -81,7 +82,7 @@ The objective of this part is to identify the sire and dam of a list of offsprin
 ### Dataset and tutorial
 We will use a dataset consisting on 1 family material fish from mixed-family tansk (which represent families of released salmon fry currently on spawning sites or in Arctic waters, file: "YourSalmongenotypes") and a baseline of all the parents that were used as broodstock to produce the crosses in 2015 (files: 40MUMSinput and 59DADSinput). The genotypes come from a set of 16 microsatellite markers and their error type rate information is in the file "16MarkerTypeErrorRate".
 
-Before loading the datasets into COLONY, open the input files and explore the following questions (in pairs):
+QUESTION: Before loading the datasets into COLONY, open the input files and explore the following questions (in pairs):
 - What does each row and column correspond to? 
 - How is the code for each marker? And for missing data?
 
@@ -147,7 +148,7 @@ head(salmon_gen@loc.fac)
 ```
 QUESTION: how many individuals and loci are we working with?
 
-For the following steps, we need to prepare the dataset a little bit. This means, for example, that we need to add the population name for each individual of the dataset and make it a factor. There are many ways to do this, but one way you could do is to use the names of the individuals and extract the first element in their name which indicates their origin, and store it in the "pop" object of salmon_gen:
+For the following steps, we need to prepare the dataset a little bit. This means, for example, that we need to add the population origin of each individual of the dataset and make it a factor. There are many ways to do this, but one way you could do is to use the names of the individuals and extract the first element in their name which indicates their origin, and store it in the "pop" object of salmon_gen:
 ```
 # include the pop map
 salmon_names <- rownames(salmon_gen@tab)
@@ -162,7 +163,6 @@ You can answer the question by using the table function:
 ```
 table(salmon_gen$pop)
 ```
-You can use whatever name you want to store the data (with certain rules, e.g. no spaces in between words).
 
 #### Calculating allele frequencies
 We will again change the format of the file to calculate allele frequencies per population. You do the conversion here:
@@ -202,8 +202,12 @@ genli_vcf$other$loc.metrics <- as.data.frame(genli_vcf$other$loc.metrics)
 ```
 And now we can finally run the HWE test per locus. 
 ```
-hwe_results <- gl.report.hwe(genli_vcf,multi_comp_method = "Bonferroni")
+hwe_results <- gl.report.hwe(genli_vcf,
+                             method_sig="ChiSquare",
+                             multi_comp_method = "bonferroni",sig_only = F)
+
 ```
+QUESTION: have a look at the Hardy-Weinberg results' table. How do the allele counts vary between the significant and non-significant loci? What do you think that the significant loci could be giving a signal of?
 
 #### Principal Component Analysis (PCA)
 
@@ -245,4 +249,4 @@ fst_results <- stamppFst(salmon_gen_gi, nboots = 10000, percent = 95)
 fst_results$Fsts
 fst_results$Pvalues
 ```
-Are the results statistically significant? What genetic processes could have made that these populations are different from each other?
+QUESTION: Are the Fst results statistically significant? What genetic processes could have made that these populations are different from each other?
