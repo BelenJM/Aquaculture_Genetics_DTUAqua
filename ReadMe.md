@@ -90,6 +90,7 @@ Once you are ready, we will go together through the loading of the files and opt
 To explore the objective of this analysis, you can look at the following Results tab ("View Results" option):
 - Best (ML) Family Cluster, Best (ML) Paternity Assignment and Best (ML) Maternity Assignment: to identify the most probable sire and dam
 - Best (ML) Sibship Assignment: to explore number of fullsibs and half sibs
+
 Explore the rest of the Results' tabs if you need when discussing the questions.
 
 Questions to discuss in pairs:
@@ -115,6 +116,7 @@ As a first step, it is always a good idea to explore how a genetic file looks li
 Pay special attention to:
 * How are the alleles coded?
 * Is there missing data? Is there a lot of it?
+
 Discuss with your partner.
 
 #### Loading the dataset into R and explore the dataset
@@ -133,7 +135,9 @@ salmon_gen
 it will show us several lines of information, to summarize all the dataset. Basically we will be able to see a summary of what is inside "salmon_gen". 
 
 QUESTION: Can you identify each element of the dataset?
+
 If you need any hints: The first row is telling us the type of object (e.g. genlight, genind), and inside we can find rows of genotypes (so individuals genotyped for a certain number of loci, bi-allelic or mono-allelic).
+
 Please spend a few minutes familiarizing yourself with the information in each entry of the dataset. You can do that by using the command head(), e.g.
 ```
 head(salmon_gen@loc.fac)
@@ -184,7 +188,8 @@ QUESTION: Can you spot some differences already between the populations? Identif
 As a second step in a population genetics/genomic analysis, we would need to filter the SNP-data. There are many ways of filtering a dataset, and it all depends what we are interested in. One thing to remember is that whatever we choose for filtering steps, we would need to report all the steps, so other scientists can replicate our analysis and understand why the results are the way they are. Some of the parameters that genomicists filter their data on is in the % of missing data, or minor allele frequencies. For the sake of simplicity, we won't be doing any filtering process for our exercises today, for two reasons: (1) the dataset has already been filtered for time-constraints, and (2) for simplicity (one can spend lots of time in filtering - and one should!). Of course you are very welcome to try different filters at home.
 
 #### Hardy-Weinberg equilibrium
-Next, let’s determine if our populations/loci are in Hardy-Weinberg equilibrium. Using the DartR package we will compute the χ2 statistic over the entire dataset and compute two P-values, one analytical and one derived from permutations:
+Next, let’s determine if our populations/loci are in Hardy-Weinberg equilibrium. Using the DartR package we will compute the χ2 statistic over the entire dataset and compute two P-values, one analytical and one derived from permutations.
+
 First we will change the format again (to a genind object) and change a few things into the object in order the package to work.
 ```
 salmon_gen_gi <- gi2gl(salmon_gen, verbose = NULL)
