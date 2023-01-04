@@ -93,10 +93,11 @@ To explore the objective of this analysis, you can look at the following Results
 
 Explore the rest of the Results' tabs if you need when discussing the questions.
 
-Questions to discuss in pairs:
+QUESTIONS:
 - Which is the most probable sire and dam for each offspring? Is there only one probable dam for each individual? What about sire?
 - What is the proportion of half- and full- sibs for these crossings?
 - What is the effective population size (Ne) of the offspring samples? What does it mean such a low Ne?
+Discuss in pairs.
 
 ## Practical 3: Population genetics analysis
 We will use a genetic marker dataset of salmon from 3 different locations: 
