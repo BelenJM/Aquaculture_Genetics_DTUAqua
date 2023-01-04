@@ -112,7 +112,9 @@ The objectives of this part are:
 
 ### Dataset and tutorial
 #### Data exploration
-As a first step, it is always a good idea to explore how a genetic file looks like. Please, open the "Baseline_file.gen" file and spend a few minutes exploring how the format is.
+As a first step, it is always a good idea to explore how a genetic file looks like. 
+
+QUESTION: Please, open the "Baseline_file.gen" file and spend a few minutes exploring how the format is.
 Pay special attention to:
 * How are the alleles coded?
 * Is there missing data? Is there a lot of it?
@@ -229,6 +231,7 @@ QUESTION: How do you see the distribution of populations in the plot:
 * Do these samples represent very genetically different populations? 
 * Are all populations clustered together in the same area, or some are further appart? 
 * How many clusters do you see? 
+
 Discuss in pairs.
 
 #### Degree of differentiation (Fst)
