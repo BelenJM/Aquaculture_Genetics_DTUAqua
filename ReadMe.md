@@ -130,7 +130,7 @@ By typing the name where we store the dataset (see earlier commands),
 ```
 salmon_gen
 ```
-it will show us several lines of information, to summarize all the dataset. Basically we will be able to see a summary of what is inside "data". 
+it will show us several lines of information, to summarize all the dataset. Basically we will be able to see a summary of what is inside "salmon_gen". 
 
 QUESTION: Can you identify each element of the dataset?
 If you need any hints: The first row is telling us the type of object (e.g. genlight, genind), and inside we can find rows of genotypes (so individuals genotyped for a certain number of loci, bi-allelic or mono-allelic).
