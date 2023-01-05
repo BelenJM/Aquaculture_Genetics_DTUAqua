@@ -49,6 +49,7 @@ require(ggtern)
 require(StAMPP)
 require(diveRsity)
 library(dartR)
+library("Hardy-Weinberg")
 ```
 
 ### Get familiar with objects in R (skip this part if you are past beginner into R)
