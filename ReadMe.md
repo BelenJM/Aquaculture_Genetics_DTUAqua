@@ -59,6 +59,7 @@ hello_world <- matrix(1:12, nrow = 4, ncol = 3)
 hello_world2 <- matrix(1:12, nrow = 4)
 ```
 Take your time to explore how to access the columns and the rows of each object. 
+
 QUESTION: What happens if you set up a third object "hello_world3" but changing the argument nrow by ncol?
 
 ### Set up your working directory in R
