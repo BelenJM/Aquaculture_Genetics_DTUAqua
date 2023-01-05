@@ -210,6 +210,18 @@ hwe_results <- gl.report.hwe(genli_vcf,
 ```
 QUESTION: have a look at the Hardy-Weinberg results' table. How do the allele counts vary between the significant and non-significant loci? What do you think that the significant loci could be giving a signal of?
 
+#### Allelic richness
+```
+x <- basicStats(infile = "Salmon_data.gen",rarefaction=T)
+
+# mean
+mean_ar <- colMeans(x$ar[,2:7], na.rm = T)
+plot(mean_ar)
+```
+
+
+
+
 #### Principal Component Analysis (PCA)
 
 We will perform a principal component analysis (PCA) where we will visualize the population structure at an individual level. For the principal component analysis (PCA), we will use some functions that handles genomic objects very "quickly". 
