@@ -42,6 +42,19 @@ require("<the package's name>")
 ### Packages needed for today's exercises
 There are thousands of helpful R packages for you to use. For the analysis at this session (part 3), we will be using the following packages. We load them into R by using the function require() or library().
 ```
+# Notes before loading packages
+# If you need to install SNPRelate, you can try:
+#if (!requireNamespace("BiocManager", quietly=TRUE))
+#  install.packages("BiocManager")
+#BiocManager::install("SNPRelate")
+
+# To install diveRsity, we need a few steps:
+# install devtools
+#install.packages("devtools")
+# install diveRsity from github
+#devtools::install_github("kkeenan02/diveRsity")
+
+# Ready to load packages
 require(adegenet)
 require(graph4lg)
 require(hierfstat)
@@ -49,7 +62,9 @@ require(ggtern)
 require(StAMPP)
 require(diveRsity)
 library(dartR)
-library("Hardy-Weinberg")
+require(HardyWeinberg)
+require(ggtern)
+require(graph4lg)
 ```
 
 ### Get familiar with objects in R (skip this part if you are past beginner into R)
